@@ -1,0 +1,78 @@
+@import '/static/public/styles/1.0.0/variables.css';
+body {
+    font-family: SourceSansPro, sans-serif !important;
+    background-color: #f8f9fa;
+    margin: 0;
+    overflow: scroll !important;
+}
+.editor-container{
+    background-color: #f2f2f2 !important;
+    border: 1px solid #dddddd;
+    padding: 20px; 
+    border-radius: 20px;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #eeeeee;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.graph-container{
+    margin-top: 20px !important;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    
+}
+
+#sql-editor {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px !important;
+    border: 1px solid #dddddd
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+#run-query {
+    display: block;
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+#run-query:hover {
+    background-color: #0056b3;
+}
+
+#results {
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+}
+
+table, th, td {
+    border: 1px solid #dddddd;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
