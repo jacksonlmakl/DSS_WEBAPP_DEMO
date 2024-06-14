@@ -1,10 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Load code mirror text area (cosmetic only not important)
-    var editor = CodeMirror.fromTextArea(document.getElementById('sql-editor'), {
-        mode: 'text/x-sql',
-        lineNumbers: true,
-        theme: 'default'
-    });
 
     //Get the run button from the HTML page and attach an event listener to trigger the API
     document.getElementById('get-query').addEventListener('click', function() {
@@ -20,6 +14,43 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(error => console.error('Error:', error));
     });
 
+
+//Graph Button Event Listener
+    document.getElementById('get-graph').addEventListener('click', function() {
+        var query = editor.getValue();
+        fetch(getWebAppBackendUrl('/query_to_df') + '?query=' + encodeURIComponent(query))
+            .then(response => response.json())
+            .then(data => showGraphOptions(data.data))
+            .catch(error => console.error('Error:', error));
+    });
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    // Load code mirror text area (cosmetic only not important)
+    var editor = CodeMirror.fromTextArea(document.getElementById('sql-editor'), {
+        mode: 'text/x-sql',
+        lineNumbers: true,
+        theme: 'default'
+    });
+
+
+    
+    
     //Function for printing tables on page
     function displayResults(data) {
         var resultsDiv = document.getElementById('results');
@@ -60,16 +91,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     
-    
-    
-//Graph Button Event Listener
-    document.getElementById('get-graph').addEventListener('click', function() {
-        var query = editor.getValue();
-        fetch(getWebAppBackendUrl('/query_to_df') + '?query=' + encodeURIComponent(query))
-            .then(response => response.json())
-            .then(data => showGraphOptions(data.data))
-            .catch(error => console.error('Error:', error));
-    });
     
     
 //Create Inputs Menus
