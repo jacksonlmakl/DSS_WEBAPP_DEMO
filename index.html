@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/codemirror.min.css">
+    <link rel="stylesheet" href="https://design.analytics.ondku.net/static/dataiku/css/style.css">
+</head>
+
+<body>
+        <div class="notebook-header">
+            <div class="horizontal-flex  object-nav"><div class="flex oh ng-isolate-scope" std-object-breadcrumb=""><!-- ngIf: topNav.item.type == 'DATASET' --><div class="object-breadcrumb ng-scope" ng-if="topNav.item.type == 'RECIPE'"><a class="item qa_recipe_name" ><i class="icon dku-icon-recipe-sql-circle-fill-24 universe-color recipe-code universe-background"></i><span class="title ellipsis recipe ng-isolate-scope ellipsed" show-tooltip-on-text-overflow="" text-tooltip="topNav.item.data.name"></span>
+                <text class= 'title ellipsed'>SQL Query <text class= 'tab dku-fw500-width'>EDP_SNOWFLAKE</text></text>
+            </a></div></div></div></div><br></br>
+    
+    <div class="container">
+        
+        <div class = 'editor-container'> 
+        <textarea id="sql-editor">SELECT TOP 25 ARR_START_MONTH, SUM(ARR) AS TOTAL_ARR FROM CORE.SALES.OPPORTUNITY WHERE ARR_START_MONTH IS NOT NULL AND ARR > 0 GROUP BY ARR_START_MONTH ORDER BY ARR_START_MONTH </textarea>
+        </div>
+        
+        <button class="btn btn--success btn--wide" id="get-query" style="background-color: #81c141 !important; margin-top: 10px !important"><i class="icon-play"></i>&nbsp;Run</button>
+
+        <button class="btn btn--success btn--wide" id="get-graph" style="background-color: #3b99fc !important;  margin-top: 10px !important"><i class="icon-chart"></i>&nbsp;Chart</button>
+
+        <div id="graph-container" class='graph-container'></div>
+        
+        <div id="results"></div>
+
+        
+    </div>
+    
+    
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/mode/sql/sql.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.6.2/d3.min.js"></script>
+
+        </html>
+        
